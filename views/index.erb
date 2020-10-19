@@ -1,14 +1,16 @@
 <ul>
-  <% i = 0 %>
-  <% @recipes.each do |recipe| %>
+  <% @recipes.each_with_index do |recipe, index| %>
     <li>
       <% done = recipe.readed ? "X" : " " %>
-      <%= "#{i + 1}. [#{done}] #{recipe.name} (#{recipe.rating}) | <a href='/destroy/#{i}'>Destroy it</a> | <a href='/markdone/#{i}'>Mark as done</a>"%>
-      <% i+= 1%>
+      <%= "#{index + 1}. [#{done}] #{recipe.name} (#{recipe.rating}) | <a href='/destroy/#{index}'>Destroy it</a> | <a href='/markdone/#{index}'>Mark as done</a>"%>
     </li>
   <% end %>
 </ul>
 
 <div>
-<a href="/new">Create a new recipe</a>
+  <a href="/new">Create a new recipe</a>
+</div>
+
+<div>
+  <a href="/import">Import a new recipe</a>
 </div>

@@ -1,0 +1,7 @@
+<ul>
+  <% @scraped.each_with_index do |hash, index| %>
+    <li>
+      <%= "#{index + 1}. #{hash[:name]} (#{hash[:rating]}) | <a href='/add_import/#{index}'>add this one</a>"%>
+    </li>
+  <% end %>
+</ul>
