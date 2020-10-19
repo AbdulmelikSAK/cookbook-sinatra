@@ -1,5 +1,14 @@
-<% @usernames.each do |username| %>
-  <li>
-    <%= username %>
-  </li>
-<% end %>
+<ul>
+  <% i = 0 %>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <% done = recipe.readed ? "X" : " " %>
+      <%= "#{i + 1}. [#{done}] #{recipe.name} (#{recipe.rating})" "<a href='/destroy/#{i}'>Destroy it</a>"%>
+      <% i+= 1%>
+    </li>
+  <% end %>
+</ul>
+
+<div>
+<a href="/new">Create a new recipe</a>
+</div>
