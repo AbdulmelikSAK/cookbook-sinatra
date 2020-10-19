@@ -33,3 +33,9 @@ get '/destroy/:i' do
   cookbook.remove_recipe(params[:i].to_i)
   redirect '/'
 end
+
+get '/markdone/:i' do
+  cookbook = Cookbook.new('lib/recipes.csv')
+  cookbook.mark_as_read(params[:i].to_i)
+  redirect '/'
+end

@@ -3,7 +3,7 @@
   <% @recipes.each do |recipe| %>
     <li>
       <% done = recipe.readed ? "X" : " " %>
-      <%= "#{i + 1}. [#{done}] #{recipe.name} (#{recipe.rating})" "<a href='/destroy/#{i}'>Destroy it</a>"%>
+      <%= "#{i + 1}. [#{done}] #{recipe.name} (#{recipe.rating}) | <a href='/destroy/#{i}'>Destroy it</a> | <a href='/markdone/#{i}'>Mark as done</a>"%>
       <% i+= 1%>
     </li>
   <% end %>
